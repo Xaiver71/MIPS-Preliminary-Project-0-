@@ -33,4 +33,9 @@ $L3:
     jal
     nop
     move $3,$2
+    lui $2
+    addiu $5,$2
+    move $4,$3
+    jal
+    nop
 

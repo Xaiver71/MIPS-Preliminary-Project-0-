@@ -13,3 +13,4 @@ main:
     div $0,$3,$2
     bne $2,$0,1f
     nop
+    break 7

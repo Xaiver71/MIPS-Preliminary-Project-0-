@@ -14,3 +14,23 @@ main:
     bne $2,$0,1f
     nop
     break 7
+    mfhi $2
+    sw $2,32($fp)
+    sw $0,24($fp)
+    b $L2
+    nop 
+
+$L3:
+    lui $2,
+    addiu $5,$2
+    lui $2,
+    addiu $4,$2
+    jal
+    nop
+
+    lw $5,28
+    move $4,$2
+    jal
+    nop
+    move $3,$2
+

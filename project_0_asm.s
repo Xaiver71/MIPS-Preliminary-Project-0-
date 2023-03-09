@@ -28,6 +28,11 @@ $L3:
     jal std::basic_ostream<char, std::char_traits<char> >& std::operator<< <std::char_traits<char> >(std::basic_ostream<char, std::char_traits<char> >&, char const*)
     nop
 
+    lw $5,28($fp)
+    move $4,$2
+    jal std::basic_ostream<char, std::char_traits<char> >::operator<<(int)
+    nop
+
 $L2:
    lw $3,24($fp)
     lw $2,32($fp)

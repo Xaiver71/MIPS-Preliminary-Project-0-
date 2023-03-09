@@ -20,23 +20,28 @@ main:
     b $L2
     nop 
 
-$L2:
-    lui $2,
-    addiu $5,$2
-    lui $2,
-    addiu $4,$2
-    jal
+$L3:
+    lui $2,%hi($LC0)
+    addiu $5,$2,%lo($LC0)
+    lui $2,%hi(_ZSt4cout)
+    addiu $4,$2,%lo(_ZSt4cout)
+    jal std::basic_ostream<char, std::char_traits<char> >& std::operator<< <std::char_traits<char> >(std::basic_ostream<char, std::char_traits<char> >&, char const*)
     nop
 
-    lw $5,28
-    move $4,$2
-    jal
+$L2:
+   lw $3,24($fp)
+    lw $2,32($fp)
     nop
-    move $3,$2
-    lui $2
-    addiu $5,$2
-    move $4,$3
-    jal
+    slt $2,$3,$2
+    bne $2,$0,$L3
+    nop
+
+    move $2,$0
+    move $sp,$fp
+    lw $31,44($sp)
+    lw $fp,40($sp)
+    addiu $sp,$sp,48
+    jr $31
     nop
 
 __static_initialization_and_destruction_0(int, int):

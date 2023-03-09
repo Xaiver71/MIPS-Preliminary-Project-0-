@@ -39,7 +39,7 @@ $L2:
     jal
     nop
 
-    __static_initialization_and_destruction_0(int, int):
+__static_initialization_and_destruction_0(int, int):
     addiu $sp,$sp,-32
     sw $31,28($sp)
     sw $fp,24($sp)
@@ -68,5 +68,14 @@ $L2:
     lui $2,%hi(_ZNSt8ios_base4InitD1Ev)
     addiu $4,$2,%lo(_ZNSt8ios_base4InitD1Ev)
     jal __cxa_atexit
+    nop
+
+$L7:
+    nop
+    move $sp,$fp
+    lw $31,28($sp)
+    lw $fp,24($sp)
+    addiu $sp,$sp,32
+    jr $31
     nop
 

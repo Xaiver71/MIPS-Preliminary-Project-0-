@@ -79,3 +79,21 @@ $L7:
     jr $31
     nop
 
+_GLOBAL__sub_numbers:
+    addiu $sp,$sp,-32
+    sw $31,28($sp)
+    sw $fp,24($sp)
+    move $fp,$sp
+    li $5,65535 # 0xffff
+    li $4,1 # 0x1
+    jal __static_initialization_and_destruction_0(int, int)
+    nop
+
+    move $sp,$fp
+    lw $31,28($sp)
+    lw $fp,24($sp)
+    addiu $sp,$sp,32
+    jr $31
+    nop
+
+

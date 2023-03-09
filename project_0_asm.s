@@ -20,7 +20,7 @@ main:
     b $L2
     nop 
 
-$L3:
+$L2:
     lui $2,
     addiu $5,$2
     lui $2,
@@ -37,5 +37,17 @@ $L3:
     addiu $5,$2
     move $4,$3
     jal
+    nop
+
+    __static_initialization_and_destruction_0(int, int):
+    addiu $sp,$sp,-32
+    sw $31,28($sp)
+    sw $fp,24($sp)
+    move $fp,$sp
+    sw $4,32($fp)
+    sw $5,36($fp)
+    lw $3,32($fp)
+    li $2,1 # 0x1
+    bne $3,$2,$L7
     nop
 

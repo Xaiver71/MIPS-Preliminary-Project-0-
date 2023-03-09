@@ -51,3 +51,13 @@ $L2:
     bne $3,$2,$L7
     nop
 
+    lw $3,36($fp)
+    li $2,65535 # 0xffff
+    bne $3,$2,$L7
+    nop
+
+    lui $2,%hi(_ZStL8__ioinit)
+    addiu $4,$2,%lo(_ZStL8__ioinit)
+    jal std::ios_base::Init::Init() [complete object constructor]
+    nop
+
